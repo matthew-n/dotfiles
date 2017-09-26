@@ -1,20 +1,49 @@
 
 " Basics {{{
-syntax enable 		" enable syntax processing
-set modeline        " turn the feature on
-set modelines=5     " what lines in the file to search
+syntax enable 		                    " enable syntax processing
+set modeline                            " turn the feature on
+set modelines=5                         " what lines in the file to search
+" }}}
+
+" UI Config {{{
+set number                              " show line numbers
+set showcmd                             " show command in bottom bar
+set cursorline                          " highlight current line
+filetype indent on                      " load filetype-specific indent files
+set wildmenu                            " visual autocomplete for command menu
+set lazyredraw                          " don't drow unfolding macros
+set showmatch                           " highlight matching [{()}]
+" }}}
+
+" Searching {{{
+set incsearch                                " search as characters are entered
+set hlsearch                                 " highlight matches
+" trun off search highlight
+nnoremap <leader><space> :nohlsearch<CR>     
 " }}}
 
 " Default tab setup {{{
-set tabstop=4		" tabs are set to the width of n spaces
-set softtabstop=4	" pressing tab insertes n spaces
-set expandtab		" turn tabs into spaces
+set tabstop=4		                         " tabs are set to the width of n spaces
+set softtabstop=4	                         " pressing tab insertes n spaces
+set expandtab		                         " turn tabs into spaces
 " }}}
 
 " Default Folding  {{{
-set foldenable		" turn folding on
-set foldlevelstart=10	" expand most by default
-set foldnestmax=10	" 10 nested folds max
+set foldenable		                         " turn folding on
+set foldmethod=indent                        " fold base on indentions / might need to changes this
+set foldlevelstart=10	                     " expand most by default
+set foldnestmax=10	                         " 10 nested folds max
 " }}}
+
+" Tmux {{{
+" Add needed escape characters for mode cursor in tmux
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif 
+"}}}
 
 " vim: foldmethod=marker foldlevel=0
