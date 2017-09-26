@@ -1,0 +1,20 @@
+
+" Basics {{{
+syntax enable 		" enable syntax processing
+set modeline        " turn the feature on
+set modelines=5     " what lines in the file to search
+" }}}
+
+" Default tab setup {{{
+set tabstop=4		" tabs are set to the width of n spaces
+set softtabstop=4	" pressing tab insertes n spaces
+set expandtab		" turn tabs into spaces
+" }}}
+
+" Default Folding  {{{
+set foldenable		" turn folding on
+set foldlevelstart=10	" expand most by default
+set foldnestmax=10	" 10 nested folds max
+" }}}
+
+" vim: foldmethod=marker foldlevel=0
