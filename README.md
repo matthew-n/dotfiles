@@ -7,3 +7,6 @@ I'm just starting to collect my dotfiles
 * Pull request that meet the following would be greatly appreciated
 ** Constructive criticism
 ** Terse but not obtuse
+
+## Back story
+Started reading [[https://dougblack.io/words/a-good-vimrc.html]]
